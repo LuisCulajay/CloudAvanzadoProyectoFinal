@@ -1,0 +1,18 @@
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+*.tfplan
+crash.log
+crash.*.log
+
+# SSH Keys
+*.pem
+aks-key
+aks-key.pub
+
+# Kubernetes
+kubeconfig
+*.kubeconfig
