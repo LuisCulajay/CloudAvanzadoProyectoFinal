@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descubre Guatemala</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #e0e0e0;
+      line-height: 1.6;
+      background-color: #121212;
+    }
+
+    header {
+      background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                         url('https://www.prensalibre.com/wp-content/uploads/2025/12/%C2%BFA-donde-viajar-en-Guatemala-en-fin-de-ano-Los-destinos-turisticos-mas-populares.jpg?quality=52');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+    }
+
+    header p {
+      font-size: 1.2em;
+      text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .container h2 {
+      color: #4ecb71;
+      margin-bottom: 10px;
+    }
+
+    .destinos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .card h3 {
+      color: #4ecb71;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #c0c0c0;
+      margin-bottom: 12px;
+      font-size: 0.95em;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #2e7d32;
+      color: #e8f5e9;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8em;
+      margin-right: 8px;
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: #ffce00;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+
+    .map-link:hover {
+      text-decoration: underline;
+    }
+
+    .map-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 8px 16px;
+      background: #4285F4;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.85em;
+      border-radius: 6px;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    .map-button:hover {
+      background: #5a95f5;
+      transform: translateY(-2px);
+    }
+
+    .map-button svg {
+      flex-shrink: 0;
+    }
+
+    .info {
+      background: #1e1e1e;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 40px;
+      border-left: 4px solid #ffce00;
+    }
+
+    .info h2 {
+      color: #ffce00;
+      margin-bottom: 15px;
+    }
+
+    .info p {
+      color: #d0d0d0;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #000;
+      color: #999;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9em;
+    }
+
+    .section-title {
+      color: #ffce00;
+      margin-top: 50px;
+      margin-bottom: 10px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .info-card {
+      background: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      border-left: 4px solid #ffce00;
+    }
+
+    .info-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background-color: #2a2a2a;
+    }
+
+    .info-content {
+      padding: 20px;
+    }
+
+    .info-content h3 {
+      color: #ffce00;
+      margin-bottom: 12px;
+    }
+
+    .info-content p {
+      color: #d0d0d0;
+      margin-bottom: 8px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Guatemala</h1>
+    <p>El corazón del mundo maya</p>
+  </header>
+
+  <div class="container">
+    <h2>Destinos imprescindibles</h2>
+    <div class="destinos">
+
+      <div class="card">
+        <img src="https://cdn.sanity.io/images/mkg24y51/production/e19ddd22e936d416a8ee0198f08d7eb210931d12-1200x800.webp/guatemala.webp?rect=67,0,1067,800&w=1280&h=960&fm=webp&q=100&fit=fill&auto=format" alt="Antigua Guatemala">
+        <div class="card-content">
+          <h3>Antigua Guatemala</h3>
+          <p>Ciudad colonial declarada Patrimonio de la Humanidad por la UNESCO, rodeada de volcanes y famosa por su arquitectura barroca.</p>
+          <span class="badge">Patrimonio UNESCO</span>
+          <br>
+        <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Antigua+Guatemala" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Ver en Google Maps
+        </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://www.guatemala.com/fotos/2025/02/Precios-de-lanchas-en-el-Lago-de-Atitlan.webp" alt="Lago de Atitlan">
+        <div class="card-content">
+          <h3>Lago de Atitlán</h3>
+          <p>Considerado uno de los lagos más bellos del mundo, rodeado por tres volcanes y pueblos indígenas con tradiciones vivas.</p>
+          <span class="badge">Naturaleza</span>
+          <br>
+          <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Lago+de+Atitlan+Guatemala" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Ver en Google Maps
+        </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://static.wixstatic.com/media/0d9b86_429080ed52ae4906ac5eba0b3c8a6d84~mv2.jpg/v1/fill/w_843,h_1124,al_c,q_85/Tikal.jpg" alt="Tikal">
+        <div class="card-content">
+          <h3>Tikal</h3>
+          <p>Una de las ciudades mayas más importantes, ubicada dentro de un parque nacional en plena selva del Petén.</p>
+          <span class="badge">Sitio arqueológico</span>
+          <br>
+          <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Tikal+National+Park+Guatemala" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Ver en Google Maps
+        </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://fotografias.lasexta.com/clipping/cmsimages01/2023/05/22/28EAB3E0-6961-46DD-814A-9F5829F4F853/semuc-champey-historia-nombre-que-uno-rincones-mas-magicos-guatemala_98.jpg?crop=800,450,x0,y0&width=1900&height=1069&optimize=high&format=webply" alt="Semuc Champey">
+        <div class="card-content">
+          <h3>Semuc Champey</h3>
+          <p>Piscinas naturales de aguas turquesas formadas sobre un puente de piedra caliza, en medio de la selva de Alta Verapaz.</p>
+          <span class="badge">Aventura</span>
+          <br>
+          <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Semuc+Champey+Guatemala" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Ver en Google Maps
+        </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://www.anywhere.com/img-a/destination/chichicastenango-guatemala/Chichicastenango-3-1.jpg" alt="Chichicastenango">
+        <div class="card-content">
+          <h3>Chichicastenango</h3>
+          <p>Famoso por su mercado tradicional indígena, uno de los más coloridos y grandes de Centroamérica.</p>
+          <span class="badge">Cultura</span>
+          <br>
+          <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Chichicastenango+Market+Guatemala" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Ver en Google Maps
+        </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxF5RF-BfDMXwe__vRMfkPzhWv8_c59TWsL0d8YTM1K9mCweH7FaThjEs&s=10" alt="Volcan de Pacaya">
+        <div class="card-content">
+          <h3>Volcán de Pacaya</h3>
+          <p>Volcán activo cercano a la capital, ideal para caminatas con vistas espectaculares y flujo de lava visible.</p>
+          <span class="badge">Volcanes</span>
+          <br>
+          <a class="map-button" href="https://www.google.com/maps/search/?api=1&query=Volcan+de+Pacaya+Guatemala" target="_blank"
+            rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+            Ver en Google Maps
+        </a>
+        </div>
+      </div>
+
+    </div>
+
+    <h2 class="section-title">Datos útiles para tu viaje</h2>
+    <div class="info-grid">
+
+      <div class="info-card">
+        <div class="info-content">
+          <h3>Moneda e idioma</h3>
+          <p><strong>Moneda:</strong> Quetzal guatemalteco (GTQ)</p>
+          <p><strong>Idioma:</strong> Español (oficial), además de 22 idiomas mayas</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-content">
+          <h3>Consejos</h3>
+          <p><strong>Mejor época para viajar:</strong> Noviembre a abril (temporada seca)</p>
+          <p><strong>Gastronomía:</strong> No te pierdas el pepián, los tamales y el café guatemalteco</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <p>Sitio desplegado en Azure Kubernetes Service (AKS) &mdash; Proyecto Cloud Avanzado</p>
+  </footer>
+</body>
+</html>
